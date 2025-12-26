@@ -9,7 +9,9 @@
 		<title>Idris Ispandi</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel ="icon" type = "image/x-icon" href = "images/favicon_io/favicon.ico">
+		<meta name="referrer" content="strict-origin-when-cross-origin" />
+
+		<link rel ="icon" type = "image/x-icon" href = "images/favicon_io/chip.ico">
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
@@ -18,7 +20,7 @@
 			<header id="header">
 				<div class="inner">
 					<a href="#" class="image avatar"><img src="images/profile_pic.jpg" alt="" ></a>
-					<h1><strong>Hi! My name is Idris,</strong><br>
+					<h1><strong>Hi! My name is Idris</strong><br>
 						an aspiring<br>
 					Electrical Engineer<br />
 					</h1>
@@ -31,56 +33,228 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h2>About Me </h2>
+							<h2> About Me </h2>
 						</header>
-						<p>I am currently a Junior studying Electrical Engineering at the <a href="https://grainger.illinois.edu/"> Grainger College of Engineering @ University of Illinois at Urbana-Champaign</a>. This summer, I had the opportunity to intern at <a href="https://www.zygy.com/">ZYGY</a>, an NLP company based in Malaysia. This experience ignited my passion for the software side of AI, leading me to focus more on this exciting field. I am eager to further my knowledge and skills in AI and look forward to exploring new opportunities in this domain. Please find my resume attached below for your review.
-
+						<p>    I’m a senior studying Electrical Engineering at the
+  <a href="https://grainger.illinois.edu/">Grainger College of Engineering at the University of Illinois Urbana-Champaign</a>,
+  graduating next May. I’m seeking IC design roles (digital/VLSI/physical design) and I’m also interested in embedded systems and robotics. Below are some of my recent projects 
+  along with some demo videos. Feel free to reach out if you have any questions or opportunities!
 						</p>
 						<ul class="actions">
-							<li><a href="https://drive.google.com/file/d/1DpThZoioPK1zpAWw69P9-dWgplRrxLVB/view?usp=sharing" class="button">Resume</a></li>
+							<li><a href="https://drive.google.com/file/d/1OrrESyCUyOMFKIizlSt-JVRxgZPWUhVf/view?usp=sharing" class="button">Resume</a></li>
 						</ul>
 					</section>
 
-				<!-- Two 
+				<!-- Two  -->
 					<section id="two">
 						<h2>Recent Work</h2>
+
 						<div class="row">
+							
+						<!-- bit multiplier -->
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-								<h3>Magna sed consequat tempus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+							<div class="project-carousel" data-carousel data-interval="0s">
+								<a href="images/low_power_multiplier/layout_web_1280x720_1.png" class="image fit thumb is-active">
+								<img src="images/low_power_multiplier/layout_web_1280x720_1.png" alt="Top-level layout">
+								</a>
+
+								<a href="images/low_power_multiplier/layout_web_1280x720_2.png" class="image fit thumb">
+								<img src="images/low_power_multiplier/layout_web_1280x720_2.png" alt="Superbuffer driving single output pad">
+								</a>
+
+								<a href="images/low_power_multiplier/layout_web_1280x720_4.png" class="image fit thumb">
+								<img src="images/low_power_multiplier/layout_web_1280x720_4.png" alt="full chip integration with pad frame">
+								</a>
+
+
+								<a href="images/low_power_multiplier/layout_web_1280x720_3.png" class="image fit thumb">
+								<img src="images/low_power_multiplier/layout_web_1280x720_3.png" alt="full chip integration with pad frame and power mesh">
+								</a>
+
+								
+								<button class="carousel-btn prev" type="button" aria-label="Previous image">❮</button>
+								<button class="carousel-btn next" type="button" aria-label="Next image">❯</button>
+							</div>
+
+							<h3>Low Power 4-bit Multiplier</h3>
+							<p>Custom layout for a low power 4-bit multiplier in 45nm GPDK.</p>
 							</article>
+
+
+
+
+
+							<!-- UR3 Vision Control -->
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>Ultricies lacinia interdum</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+  							<div class="project-carousel" data-carousel data-interval="0s">
+
+								<a href="images/ur3/ur3_workcell_wide_shot_1280x720.png" class="image fit thumb is-active">
+								<img src="images/ur3/ur3_workcell_wide_shot_1280x720.png" alt="UR3 bench-top">
+								</a>
+
+								<a href="images/ur3/vision_debug_monitor_1280x720.png" class="image fit thumb">
+								<img src="images/ur3/vision_debug_monitor_1280x720.png" alt="UR3 debug terminal">
+								</a>
+
+
+
+
+								<!-- YouTube slide (uses thumbnail image, opens video in lightbox) -->
+								<a href="https://www.youtube-nocookie.com/embed/zkm3Y_IjzuM/?rel=0"
+								class="image fit thumb"
+								data-poptrox="iframe,1280x720">
+								<img src="images/ur3/ur3_workcell_overview_1280x720_play.png" alt="Demo video">
+								</a>
+
+
+
+								<button class="carousel-btn prev" type="button" aria-label="Previous image">❮</button>
+								<button class="carousel-btn next" type="button" aria-label="Next image">❯</button>
+							</div>
+
+							<h3>UR3 Vision Control</h3>
+							<p>Vision-guided UR3 robot: ROS pipeline + OpenCV tracking for responsive, real-time motion.</p>
 							</article>
+
+
+							<!-- guitar pedal -->
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-								<h3>Tortor metus commodo</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+  							<div class="project-carousel" data-carousel data-interval="0s">
+
+								<a href="images/guitar_pedal/guitar_pedal.jpeg" class="image fit thumb  is-active">
+								<img src="images/guitar_pedal/guitar_pedal.jpeg" alt="POC circuit">
+								</a>
+
+								<a href="images/guitar_pedal/trace_debug.jpeg" class="image fit thumb">
+								<img src="images/guitar_pedal/trace_debug.jpeg" alt="signal debug">
+								</a>
+
+
+
+
+								<!-- YouTube slide (uses thumbnail image, opens video in lightbox) -->
+								<a href="https://www.youtube-nocookie.com/embed/ZXXGwoLbXvk/?rel=0"
+								class="image fit thumb"
+								data-poptrox="iframe,1280x720">
+								<img src="images/guitar_pedal/thumbnail.png" alt="Demo video">
+								</a>
+
+
+
+								<button class="carousel-btn prev" type="button" aria-label="Previous image">❮</button>
+								<button class="carousel-btn next" type="button" aria-label="Next image">❯</button>
+							</div>
+
+							<h3>Digital Guitar Pedal</h3>
+							<p> Built a digital guitar pedal with an analog pre-amp </p>
 							</article>
+
+							<!-- guitar pedal -->
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-								<h3>Quam neque phasellus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+  							<div class="project-carousel" data-carousel data-interval="0s">
+
+								<a href="images/pacman/block_design.png" class="image fit thumb is-active">
+								<img src="images/pacman/block_design.png" alt="block design">
+								</a>
+
+								<a href="images/pacman/synth.png" class="image fit thumb">
+								<img src="images/pacman/synth.png" alt="synthesized design">
+								</a>
+
+
+
+
+								<!-- YouTube slide (uses thumbnail image, opens video in lightbox) -->
+								<a href="https://www.youtube-nocookie.com/embed/sG6TmA5MbXM/?rel=0"
+								class="image fit thumb "
+								data-poptrox="iframe,1280x720">
+								<img src="images/pacman/play_circle.png" alt="Demo video">
+								</a>
+
+
+
+								<button class="carousel-btn prev" type="button" aria-label="Previous image">❮</button>
+								<button class="carousel-btn next" type="button" aria-label="Next image">❯</button>
+							</div>
+
+							<h3>Hardware Pacman</h3>
+							<p> Built a Pac Man clone in System Verilog </p>
 							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
-								<h3>Nunc enim commodo aliquet</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
-								<h3>Risus ornare lacinia</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
+
+
+
+							
+
+
+
+							
 						</div>
-						<ul class="actions">
+						<!-- <ul class="actions">
 							<li><a href="#" class="button">Full Portfolio</a></li>
-						</ul>
+						</ul> -->
 					</section>
-					-->
+					
+
+
+<!-- Coursework -->
+<section id="coursework">
+  <h2>Relevant Coursework</h2>
+  <p>Coursework aligned with IC design, digital systems, and robotics/embedded.</p>
+
+  <div class="row">
+    <div class="col-6 col-12-xsmall">
+      <h3>IC Design / VLSI</h3>
+      <ul class="alt">
+        <li><a href="https://ece.illinois.edu/academics/courses/ece482" target="_blank" rel="noopener noreferrer">ECE 482 — Digital IC Design</a></li>
+		<li><a href="https://ece.illinois.edu/academics/courses/ece483" target="_blank" rel="noopener noreferrer">ECE 483 — Analog IC Design</a> <em>(In Progress)</em></li>
+        <li><a href="https://ece.illinois.edu/academics/courses/ece340" target="_blank" rel="noopener noreferrer">ECE 340 — Semiconductor Devices</a></li>
+        <li><a href="https://ece.illinois.edu/academics/courses/ece340" target="_blank" rel="noopener noreferrer">ECE 342 — Electronic Circuits</a></li>
+        <li><a href="https://ece.illinois.edu/academics/courses/ece340" target="_blank" rel="noopener noreferrer">ECE 343 — Electronic Circuits Lab</a></li>
+        <li><a href="https://ece.illinois.edu/academics/courses/ece444" target="_blank" rel="noopener noreferrer">ECE 444 — IC Device Theory &amp; Fabrication</a> <em>(In Progress)</em></li>
+      </ul>
+    </div>
+
+    <div class="col-6 col-12-xsmall">
+      <h3>Digital / Computer Engineering</h3>
+      <ul class="alt">
+		<li><a href="https://ece.illinois.edu/academics/courses/ece408" target="_blank" rel="noopener noreferrer">ECE 408 — Applied Parallel Programming</a></li>
+		<li><a href="https://ece.illinois.edu/academics/courses/ece462" target="_blank" rel="noopener noreferrer">ECE 462 — Logic Synthesis</a></li>
+        <li><a href="https://ece.illinois.edu/academics/courses/ece385" target="_blank" rel="noopener noreferrer">ECE 385 — Digital Systems Laboratory</a></li>
+		<li><a href="https://ece.illinois.edu/academics/courses/ece220" target="_blank" rel="noopener noreferrer">ECE 220 — Computer Systems &amp; Programming</a></li>
+        <li><a href="https://ece.illinois.edu/academics/courses/ece120" target="_blank" rel="noopener noreferrer">ECE 120 — Introduction to Computing</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6 col-12-xsmall">
+      <h3>Robotics / Embedded</h3>
+      <ul class="alt">
+        <li><a href="https://ece.illinois.edu/academics/courses/ece470" target="_blank" rel="noopener noreferrer">ECE 470 — Introduction to Robotics</a></li>
+        <li><a href="https://ece.illinois.edu/academics/courses/ece479" target="_blank" rel="noopener noreferrer">ECE 479 — IoT and Cognitive Computing</a> <em>(In Progress)</em></li>
+        <li><a href="https://ece.illinois.edu/academics/courses/ece210" target="_blank" rel="noopener noreferrer">ECE 210 — Analog Signal Processing</a></li>
+        <li><a href="https://ece.illinois.edu/academics/courses/ece110" target="_blank" rel="noopener noreferrer">ECE 110 — Introduction to Electronics</a></li>
+      </ul>
+    </div>
+
+    <div class="col-6 col-12-xsmall">
+      <h3>CS / Foundations</h3>
+      <ul class="alt">
+		<li><a href="https://siebelschool.illinois.edu/academics/courses/cs441" target="_blank" rel="noopener noreferrer">CS 441 — Applied Machine Learning</a></li>
+		<li><a href="https://siebelschool.illinois.edu/academics/courses/cs225" target="_blank" rel="noopener noreferrer">CS 225 — Data Structures</a></li>
+        <li><a href="https://siebelschool.illinois.edu/academics/courses/cs173" target="_blank" rel="noopener noreferrer">CS 173 — Discrete Structures</a></li>
+        <li><a href="https://ece.illinois.edu/academics/courses/ece313" target="_blank" rel="noopener noreferrer">ECE 313 — Probability with Engineering Applications</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
 
 				<!-- Three-->
 					<section id="three">
@@ -423,8 +597,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		<footer id="footer">
 			<div class="inner">
 				<ul class="icons">
-					<li><a href="https://www.instagram.com/idrispndi/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="https://github.com/idrisispandi" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					<!-- <li><a href="https://www.instagram.com/idrispndi/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> -->
+					<!-- <li><a href="https://github.com/idrisispandi" class="icon brands fa-github"><span class="label">Github</span></a></li> -->
 					<li><a href="https://www.linkedin.com/in/idris-ispandi-b3638b1a4/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 					<li><a href="mailto:idrisispandi02@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 				</ul>

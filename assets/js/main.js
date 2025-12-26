@@ -96,22 +96,156 @@
 	// Main Sections: Two.
 
 		// Lightbox gallery.
-			$window.on('load', function() {
+			// $window.on('load', function() {
 
-				$('#two').poptrox({
-					caption: function($a) { return $a.next('h3').text(); },
-					overlayColor: '#2c2c2c',
-					overlayOpacity: 0.85,
-					popupCloserText: '',
-					popupLoaderText: '',
-					selector: '.work-item a.image',
-					usePopupCaption: true,
-					usePopupDefaultStyling: false,
-					usePopupEasyClose: false,
-					usePopupNav: true,
-					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
-				});
+			// 	$('#two').poptrox({
+			// 		caption: function($a) { return $a.next('h3').text(); },
+			// 		overlayColor: '#2c2c2c',
+			// 		overlayOpacity: 0.85,
+			// 		popupCloserText: '',
+			// 		popupLoaderText: '',
+			// 		selector: '.work-item a.image',
+			// 		usePopupCaption: true,
+			// 		usePopupDefaultStyling: false,
+			// 		usePopupEasyClose: false,
+			// 		usePopupNav: true,
+			// 		windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+			// 	});
 
-			});
+			// });
+
+function initProjectCarousels() {
+  document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+    var slides = Array.from(carousel.querySelectorAll('a.image'));
+    if (slides.length <= 1) return;
+
+    var btnPrev = carousel.querySelector('.carousel-btn.prev');
+    var btnNext = carousel.querySelector('.carousel-btn.next');
+
+    var intervalMs = parseInt(carousel.getAttribute('data-interval'), 10);
+    if (Number.isNaN(intervalMs)) intervalMs = 0;
+
+    var idx = Math.max(0, slides.findIndex(function (s) { return s.classList.contains('is-active'); }));
+    var timer = null;
+
+    function show(i) {
+      slides[idx].classList.remove('is-active');
+      idx = (i + slides.length) % slides.length;
+      slides[idx].classList.add('is-active');
+    }
+
+    function next() { show(idx + 1); }
+    function prev() { show(idx - 1); }
+
+    if (btnNext) btnNext.addEventListener('click', function (e) { e.preventDefault(); next(); });
+    if (btnPrev) btnPrev.addEventListener('click', function (e) { e.preventDefault(); prev(); });
+
+    // Pause autoplay on hover/focus (optional but nice)
+    function start() {
+      if (intervalMs > 0 && !timer) timer = window.setInterval(next, intervalMs);
+    }
+    function stop() {
+      if (timer) { window.clearInterval(timer); timer = null; }
+    }
+
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    carousel.addEventListener('focusin', stop);
+    carousel.addEventListener('focusout', start);
+
+    start();
+  });
+}
+
+
+$window.on('load', function () {
+
+  // 1) Inline carousel buttons
+  initProjectCarousels();
+
+  // 2) Lightbox: one gallery PER project card (nav stays within that card)
+  $('#two article.work-item').each(function () {
+    var $item = $(this);
+
+    $item.poptrox({
+      selector: 'a.image', // <-- IMPORTANT: relative to THIS work-item only
+      caption: function ($a) {
+        return $a.find('img').attr('alt') || '';
+      },
+      overlayColor: '#2c2c2c',
+      overlayOpacity: 0.85,
+      popupCloserText: '',
+      popupLoaderText: '',
+      usePopupCaption: true,
+      usePopupDefaultStyling: false,
+      usePopupEasyClose: false,
+      usePopupNav: true,
+      windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+    });
+  });
+
+});
+
+
+
+// $window.on('load', function() {
+
+//   // Lightbox: one gallery per work-item (so nav is per project)
+//   $('#two article.work-item').each(function() {
+//     var $item = $(this);
+
+//     $item.poptrox({
+//       selector: 'article.work-item a.image', // <-- IMPORTANT (works for carousel + normal)
+//     //   caption: function ($a) {
+// 	// 	var title = $a.closest('article.work-item').find('h3').first().text();
+// 	// 	var alt = $a.find('img').attr('alt') || '';
+// 	// 	return alt ? (title + ' — ' + alt) : title;
+// 	// 	},
+// 	caption: function ($a) {
+// 		return $a.find('img').attr('alt') || '';
+// 		},
+//   overlayColor: '#2c2c2c',
+//   overlayOpacity: 0.85,
+//   popupCloserText: '',
+//   popupLoaderText: '',
+//   usePopupCaption: true,
+//   usePopupDefaultStyling: false,
+//   usePopupEasyClose: false,
+//   usePopupNav: true,
+//   windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+//     });
+//   });
+
+//   // Carousel init
+//   initProjectCarousels();
+
+// });
+
+
+// $window.on('load', function () {
+
+//   $('#two').poptrox({
+//     selector: 'article.work-item a.image',
+//     caption: function ($a) { return $a.find('img').attr('alt') || ''; },
+//     overlayColor: '#2c2c2c',
+//     overlayOpacity: 0.85,
+//     popupCloserText: '',
+//     popupLoaderText: '',
+//     usePopupCaption: true,
+//     usePopupDefaultStyling: false,
+//     usePopupEasyClose: false,
+//     usePopupNav: true,
+//     windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+//   });
+
+//   initProjectCarousels();
+// });
+
+
+
+
+
+
+
 
 })(jQuery);
